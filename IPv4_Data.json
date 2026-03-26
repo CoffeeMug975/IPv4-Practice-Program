@@ -1,0 +1,202 @@
+[
+    {
+        "id": 0,
+        "cidr": 8,
+        "subnetMask": "255.0.0.0",
+        "blockSize": 256,
+        "numberOfSubnets": 1,
+        "hosts": 16777214
+    },
+    {
+        "id": 1,
+        "cidr": 9,
+        "subnetMask": "255.128.0.0",
+        "blockSize": 128,
+        "numberOfSubnets": 2,
+        "hosts": 8388606
+    },
+    {
+        "id": 2,
+        "cidr": 10,
+        "subnetMask": "255.192.0.0",
+        "blockSize": 64,
+        "numberOfSubnets": 4,
+        "hosts": 4194302
+    },
+    {
+        "id": 3,
+        "cidr": 11,
+        "subnetMask": "255.224.0.0",
+        "blockSize": 32,
+        "numberOfSubnets": 8,
+        "hosts": 2097150
+    },
+    {
+        "id": 4,
+        "cidr": 12,
+        "subnetMask": "255.240.0.0",
+        "blockSize": 16,
+        "numberOfSubnets": 16,
+        "hosts": 1048574
+    },
+    {
+        "id": 5,
+        "cidr": 13,
+        "subnetMask": "255.248.0.0",
+        "blockSize": 8,
+        "numberOfSubnets": 32,
+        "hosts": 524286
+    },
+    {
+        "id": 6,
+        "cidr": 14,
+        "subnetMask": "255.252.0.0",
+        "blockSize": 4,
+        "numberOfSubnets": 64,
+        "hosts": 262142
+    },
+    {
+        "id": 7,
+        "cidr": 15,
+        "subnetMask": "255.254.0.0",
+        "blockSize": 2,
+        "numberOfSubnets": 128,
+        "hosts": 131070
+    },
+    {
+        "id": 8,
+        "cidr": 16,
+        "subnetMask": "255.255.0.0",
+        "blockSize": 256,
+        "numberOfSubnets": 1,
+        "hosts": 65534
+    },
+    {
+        "id": 9,
+        "cidr": 17,
+        "subnetMask": "255.255.128.0",
+        "blockSize": 128,
+        "numberOfSubnets": 2,
+        "hosts": 32766
+    },
+    {
+        "id": 10,
+        "cidr": 18,
+        "subnetMask": "255.255.192.0",
+        "blockSize": 64,
+        "numberOfSubnets": 4,
+        "hosts": 16382
+    },
+    {
+        "id": 11,
+        "cidr": 19,
+        "subnetMask": "255.255.224.0",
+        "blockSize": 32,
+        "numberOfSubnets": 8,
+        "hosts": 8190
+    },
+    {
+        "id": 12,
+        "cidr": 20,
+        "subnetMask": "255.255.240.0",
+        "blockSize": 16,
+        "numberOfSubnets": 16,
+        "hosts": 4094
+    },
+    {
+        "id": 13,
+        "cidr": 21,
+        "subnetMask": "255.255.248.0",
+        "blockSize": 8,
+        "numberOfSubnets": 32,
+        "hosts": 2046
+    },
+    {
+        "id": 14,
+        "cidr": 22,
+        "subnetMask": "255.255.252.0",
+        "blockSize": 4,
+        "numberOfSubnets": 64,
+        "hosts": 1022
+    },
+    {
+        "id": 15,
+        "cidr": 23,
+        "subnetMask": "255.255.254.0",
+        "blockSize": 2,
+        "numberOfSubnets": 128,
+        "hosts": 510
+    },
+    {
+        "id": 16,
+        "cidr": 24,
+        "subnetMask": "255.255.255.0",
+        "blockSize": 256,
+        "numberOfSubnets": 1,
+        "hosts": 254
+    },
+    {
+        "id": 17,
+        "cidr": 25,
+        "subnetMask": "255.255.255.128",
+        "blockSize": 128,
+        "numberOfSubnets": 2,
+        "hosts": 126
+    },
+    {
+        "id": 18,
+        "cidr": 26,
+        "subnetMask": "255.255.255.192",
+        "blockSize": 64,
+        "numberOfSubnets": 4,
+        "hosts": 62
+    },
+    {
+        "id": 19,
+        "cidr": 27,
+        "subnetMask": "255.255.255.224",
+        "blockSize": 32,
+        "numberOfSubnets": 8,
+        "hosts": 30
+    },
+    {
+        "id": 20,
+        "cidr": 28,
+        "subnetMask": "255.255.255.240",
+        "blockSize": 16,
+        "numberOfSubnets": 16,
+        "hosts": 14
+    },
+    {
+        "id": 21,
+        "cidr": 29,
+        "subnetMask": "255.255.255.248",
+        "blockSize": 8,
+        "numberOfSubnets": 32,
+        "hosts": 6
+    },
+    {
+        "id": 22,
+        "cidr": 30,
+        "subnetMask": "255.255.255.252",
+        "blockSize": 4,
+        "numberOfSubnets": 64,
+        "hosts": 2
+    },
+    {
+        "id": 23,
+        "cidr": 31,
+        "subnetMask": "255.255.255.254",
+        "blockSize": 2,
+        "numberOfSubnets": null,
+        "hosts": 2
+    },
+    {
+        "id": 24,
+        "cidr": 32,
+        "subnetMask": "255.255.255.255",
+        "blockSize": 1,
+        "numberOfSubnets": null,
+        "hosts": 1
+    }
+]
