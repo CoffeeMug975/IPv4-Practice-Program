@@ -4,17 +4,11 @@
 # 2.    
 # 2.    
 
-
+from src.ipv4TableSelection import displayIPv4Table
 
 
 # Inefficient to hard code all this.
 # Create a loop that pulls from the json and formats it 
-def ipv4Table():
-    print("\n IPv4 NETWORKING TABLE\n"
-    "CIDR\tSubnetMask\tBlock Size\t # of Hosts\t Hosts\n"
-    "/8\t255.0.0.0\t256\t\t1\t\t16777216"
-    )
-    input("\nPress any button to continue to main menu")
 
 def mainMenu():
     global selection
@@ -35,7 +29,7 @@ def main():
         mainMenu()
         match selection:
             case "table":
-                ipv4Table()
+                displayIPv4Table()
             case "random":
                 print("random option selected")
             case "challenge":
