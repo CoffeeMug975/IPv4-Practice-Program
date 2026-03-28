@@ -1,14 +1,11 @@
 # Author: Daniel Asefa
-# 
-# 1.    
-# 2.    
-# 2.    
+# Date: 3-27-2026
+# Purpose: main function
 
 from src.ipv4TableSelection import displayIPv4Table
-
-
-# Inefficient to hard code all this.
-# Create a loop that pulls from the json and formats it 
+from src.randomSelection import randomSelection
+from src.challengeSelection import challengeSelection
+from src.helpSelection import helpMenu
 
 def mainMenu():
     global selection
@@ -31,11 +28,11 @@ def main():
             case "table":
                 displayIPv4Table()
             case "random":
-                print("random option selected")
+                randomSelection()
             case "challenge":
-                print("challenge option selected")
+                challengeSelection()
             case "help":
-                print("help option selected")
+                helpMenu()
             case "exit":
                 if selection == "exit":
                     running = False
