@@ -1,9 +1,9 @@
-import json
-import os
-
 # Author: Daniel Asefa
 # Date: 3-27-2026
 # Purpose: take JSON data and display it in a table
+
+import json
+import os
 
 class CidrData:
     def __init__(self, data: dict):
