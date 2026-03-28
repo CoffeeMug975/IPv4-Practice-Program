@@ -1,7 +1,8 @@
 # Author: Daniel Asefa
 # Date: 3-27-2026
-# Purpose: take JSON data and display it in a table
+# Purpose: Take JSON data and display IPv4 table selection to the main menu, and add a way to return to the main menu after displaying the table
 
+# ToDo - Add Class type (A,B,C) to Json data to CidrData class and display it
 import json
 import os
 
@@ -64,7 +65,7 @@ def displayJsonData():
 
 def displayIPv4Table():
     title = str("IPv4 NETWORKING TABLE")
-    line = "--------------------------------------------------------------------"
+    line = str("--------------------------------------------------------------------")
     print(f"\n{line}\n{title:^68}\n{line}\n"
     "CIDR\tSubnetMask         Block Size\t # of Subnets\t     Hosts\n"
     f"{line}")
