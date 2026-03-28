@@ -52,13 +52,13 @@ def displayJsonData():
     # load the JSON data
     with open(data_path, 'r') as f:
         json_data = json.load(f)
+    f.close()
     
     cidrList = [CidrData(entry) for entry in json_data]
 
     for cidr in cidrList:
         print(cidr.showData())
 
-    f.close()
 
 
 
