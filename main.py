@@ -2,10 +2,10 @@
 # Date: 3-27-2026
 # Purpose: main function
 
-from src.ipv4TableSelection import displayIPv4Table
-from src.randomSelection import randomSelection
-from src.challengeSelection import challengeSelection
-from src.helpSelection import helpMenu
+from src.mainPages.ipv4TableSelection import displayIPv4Table
+from src.mainPages.randomSelection import randomSelection
+from src.mainPages.challengeSelection import challengeSelection
+from src.mainPages.helpSelection import helpMenu
 
 def mainMenu():
     global selection
