@@ -2,6 +2,7 @@
     {
         "id": 0,
         "cidr": 8,
+        "ipClass": "A",
         "subnetMask": "255.0.0.0",
         "blockSize": 256,
         "numberOfSubnets": 1,
@@ -10,6 +11,7 @@
     {
         "id": 1,
         "cidr": 9,
+        "ipClass": "A",
         "subnetMask": "255.128.0.0",
         "blockSize": 128,
         "numberOfSubnets": 2,
@@ -18,6 +20,7 @@
     {
         "id": 2,
         "cidr": 10,
+        "ipClass": "A",
         "subnetMask": "255.192.0.0",
         "blockSize": 64,
         "numberOfSubnets": 4,
@@ -26,6 +29,7 @@
     {
         "id": 3,
         "cidr": 11,
+        "ipClass": "A",
         "subnetMask": "255.224.0.0",
         "blockSize": 32,
         "numberOfSubnets": 8,
@@ -34,6 +38,7 @@
     {
         "id": 4,
         "cidr": 12,
+        "ipClass": "A",
         "subnetMask": "255.240.0.0",
         "blockSize": 16,
         "numberOfSubnets": 16,
@@ -42,6 +47,7 @@
     {
         "id": 5,
         "cidr": 13,
+        "ipClass": "A",
         "subnetMask": "255.248.0.0",
         "blockSize": 8,
         "numberOfSubnets": 32,
@@ -50,6 +56,7 @@
     {
         "id": 6,
         "cidr": 14,
+        "ipClass": "A",
         "subnetMask": "255.252.0.0",
         "blockSize": 4,
         "numberOfSubnets": 64,
@@ -58,6 +65,7 @@
     {
         "id": 7,
         "cidr": 15,
+        "ipClass": "A",
         "subnetMask": "255.254.0.0",
         "blockSize": 2,
         "numberOfSubnets": 128,
@@ -66,6 +74,7 @@
     {
         "id": 8,
         "cidr": 16,
+        "ipClass": "B",
         "subnetMask": "255.255.0.0",
         "blockSize": 256,
         "numberOfSubnets": 1,
@@ -74,6 +83,7 @@
     {
         "id": 9,
         "cidr": 17,
+        "ipClass": "B",
         "subnetMask": "255.255.128.0",
         "blockSize": 128,
         "numberOfSubnets": 2,
@@ -82,6 +92,7 @@
     {
         "id": 10,
         "cidr": 18,
+        "ipClass": "B",
         "subnetMask": "255.255.192.0",
         "blockSize": 64,
         "numberOfSubnets": 4,
@@ -90,6 +101,7 @@
     {
         "id": 11,
         "cidr": 19,
+        "ipClass": "B",
         "subnetMask": "255.255.224.0",
         "blockSize": 32,
         "numberOfSubnets": 8,
@@ -98,6 +110,7 @@
     {
         "id": 12,
         "cidr": 20,
+        "ipClass": "B",
         "subnetMask": "255.255.240.0",
         "blockSize": 16,
         "numberOfSubnets": 16,
@@ -106,6 +119,7 @@
     {
         "id": 13,
         "cidr": 21,
+        "ipClass": "B",
         "subnetMask": "255.255.248.0",
         "blockSize": 8,
         "numberOfSubnets": 32,
@@ -114,6 +128,7 @@
     {
         "id": 14,
         "cidr": 22,
+        "ipClass": "B",
         "subnetMask": "255.255.252.0",
         "blockSize": 4,
         "numberOfSubnets": 64,
@@ -122,6 +137,7 @@
     {
         "id": 15,
         "cidr": 23,
+        "ipClass": "B",
         "subnetMask": "255.255.254.0",
         "blockSize": 2,
         "numberOfSubnets": 128,
@@ -130,6 +146,7 @@
     {
         "id": 16,
         "cidr": 24,
+        "ipClass": "C",
         "subnetMask": "255.255.255.0",
         "blockSize": 256,
         "numberOfSubnets": 1,
@@ -138,6 +155,7 @@
     {
         "id": 17,
         "cidr": 25,
+        "ipClass": "C",
         "subnetMask": "255.255.255.128",
         "blockSize": 128,
         "numberOfSubnets": 2,
@@ -146,6 +164,7 @@
     {
         "id": 18,
         "cidr": 26,
+        "ipClass": "C",
         "subnetMask": "255.255.255.192",
         "blockSize": 64,
         "numberOfSubnets": 4,
@@ -154,6 +173,7 @@
     {
         "id": 19,
         "cidr": 27,
+        "ipClass": "C",
         "subnetMask": "255.255.255.224",
         "blockSize": 32,
         "numberOfSubnets": 8,
@@ -162,6 +182,7 @@
     {
         "id": 20,
         "cidr": 28,
+        "ipClass": "C",
         "subnetMask": "255.255.255.240",
         "blockSize": 16,
         "numberOfSubnets": 16,
@@ -170,6 +191,7 @@
     {
         "id": 21,
         "cidr": 29,
+        "ipClass": "C",
         "subnetMask": "255.255.255.248",
         "blockSize": 8,
         "numberOfSubnets": 32,
@@ -178,6 +200,7 @@
     {
         "id": 22,
         "cidr": 30,
+        "ipClass": "C",
         "subnetMask": "255.255.255.252",
         "blockSize": 4,
         "numberOfSubnets": 64,
@@ -186,6 +209,7 @@
     {
         "id": 23,
         "cidr": 31,
+        "ipClass": "C",
         "subnetMask": "255.255.255.254",
         "blockSize": 2,
         "numberOfSubnets": null,
@@ -194,6 +218,7 @@
     {
         "id": 24,
         "cidr": 32,
+        "ipClass": "C",
         "subnetMask": "255.255.255.255",
         "blockSize": 1,
         "numberOfSubnets": null,
