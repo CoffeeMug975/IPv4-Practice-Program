@@ -8,7 +8,7 @@ from src.misc.CidrDataClass import CidrData
 
 
 # Get JSON data, convert to a list and close JSON 
-def displayJsonData():
+def formatJsonData():
     # Path for json file location
     base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))     # base_dir = ../../../
     data_path = os.path.join(base_dir, "data", "data.json")                                     # data_path = base_dir/data/data.json

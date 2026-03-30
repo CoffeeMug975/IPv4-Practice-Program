@@ -2,7 +2,7 @@
 # Date: 3-27-2026
 # Purpose: Take JSON data and display IPv4 table selection to the main menu, and add a way to return to the main menu after displaying the table
 
-from src.misc.dataFormatter import displayJsonData
+from src.misc.dataFormatter import formatJsonData
 
 
 # Function for displaying table
@@ -15,7 +15,7 @@ def displayIPv4Table():
     "CIDR\tIpv4 Class\tSubnetMask         Block Size\t # of Subnets\t     Hosts\n"
     f"{line}")
 
-    cidrList = displayJsonData()
+    cidrList = formatJsonData()
     
     for cidr in cidrList:
         print(cidr.showData())
