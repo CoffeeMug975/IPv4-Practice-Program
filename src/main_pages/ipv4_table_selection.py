@@ -23,4 +23,4 @@ def display_ipv4_table():
     
     print(f"{line}")
 
-    input("\nPress Enter to continue to main menu")
+    input("\nPress Enter to continue to main menu: ")

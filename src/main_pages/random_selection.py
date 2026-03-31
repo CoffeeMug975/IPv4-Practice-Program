@@ -11,9 +11,13 @@ def random_selection():
     cidr_List = format_json_data()
 
     # Select a random number from 1 to 24
-    random_int_id = random.randint(1,24)
-    print (random_int_id)
+    random_selection_id = random.randint(1,24)
+    random_question_id = random.randint(1,3)
+    # 1 = CIDR
+    # 2 = Subnet Mask
+    # 3 = Hosts
 
+    print (random_selection_id)
     # Need a method to randomly select a line of the JSON data: example.py
     # Example:  Selected Line: 24;C;255.255.255.0;256;1;254
 

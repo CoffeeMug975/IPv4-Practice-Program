@@ -9,7 +9,6 @@ from src.main_pages.help_selection import help_menu
 
 
 def main_menu():
-    global selection
     selection = input("\n\n\t\tWelcome to IPv4 Practice Application\n\nPlease choose from the following options:\n"
         "\t table       - View networking information table from /8 to /32\n"
         "\t random      - Questions are randomly selected \n"
@@ -24,7 +23,8 @@ def main():
     running = bool(True)
 
     while running:
-        main_menu()
+
+        selection = main_menu()
         match selection:
             case "table":
                 display_ipv4_table()
