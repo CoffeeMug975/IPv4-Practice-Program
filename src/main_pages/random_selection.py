@@ -4,26 +4,83 @@
 import random
 from src.utils.data_formatter import format_json_data
 
+def not_type_c_question(question_list: list, question_not_c: int) -> str:
+    match question_not_c:
+        case 1:
+            print(f"For a CIDR of {question_list[0]} provide the following:\n")
+            entered_ipv4_class = input(f"IPv4 Class: ")
+            entered_subnet_mask = input(f"Subnet Mask: ")
+            entered_block_size = input(f"Block Size: ")
+            entered_num_of_subnets = input(f"Number of Subnets: ")
+            entered_num_of_hosts = input(f"Number of Hosts: ")
+
+            # Execute method to compare inputted data to answers
+            # check_answers()
+        case 2:
+            print("Subnet Mask Question")
+        case __:
+            print("Error: invalid question type of {question_not_c}")
+    return
+
+# 5 varieties of CheckAnswer() is not a good thing
+# Has to be a better way. Look into later
+
+def type_c_question(question_list: list, question_c: int) -> str:
+    print(f"Question List: {question_list}")
+    print(f"Question Type: {question_c}")
+    return "something"
+
+
+def is_id_c(selection_id: int) -> bool:
+    if selection_id >= 24:
+        return True
+    else:
+        return False
+
 def random_selection():
     input("Inside random option")
 
-    # Generate list from JSON data 
-    cidr_List = format_json_data()
+    cidr_list = format_json_data()              # Generate list from JSON data 
+    selection_id = int(random.randint(1,24))    # Random number from 1 to 24 referencing id of JSON data
+    question_c = random.randint(1,3)            # Question can give user one of 3 variables (CIDR / SubnetMask / Hosts)
+    question_not_c = random.randint(1,2)        # Question can give user one of 2 variables (CIDR / SubnetMask)
 
-    # Select a random number from 1 to 24
-    random_selection_id = random.randint(1,24)
-    random_question_id = random.randint(1,3)
-    # 1 = CIDR
-    # 2 = Subnet Mask
-    # 3 = Hosts
+    # print(f"Selection ID: {selection_id}\tType: {type(selection_id)}")      # This line is for testing - DELETE LATER
 
-    print (random_selection_id)
-    # Need a method to randomly select a line of the JSON data: example.py
-    # Example:  Selected Line: 24;C;255.255.255.0;256;1;254
+    # Get question data for given selection id and store it in a list
+    #   question_list[0] = CIDR
+    #   question_list[1] = IPv4 Class
+    #   question_list[2] = Subnet Mask
+    #   question_list[3] = Block Size
+    #   question_list[4] = Number of subnets
+    #   question_list[5] = Number of Hosts
+    for cidr in cidr_list:
+        if selection_id == cidr.getId():
+            # print(cidr)                                                     # This line is for testing - DELETE LATER
+            global question_list
+            question_list =[cidr.getCidr()]
+            question_list.append(cidr.getIpClass())
+            question_list.append(cidr.getSubnetMask())
+            question_list.append(cidr.getBlockSize())
+            question_list.append(cidr.getNumberOfSubnets())
+            question_list.append(cidr.getHosts())
 
-    # Need a method to randomly select 1 unique attribute of the JSON (this one is used in the question wording)
-    # Example: Unique Selected Attribute: CIDR /24
-    # 
+    print(f"Question List outside: {question_list}")                        # This line is for testing - DELETE LATER
+
+    if is_id_c(selection_id):
+        print("Option 1")
+        type_c_question(question_list, question_c)
+        return
+    
+    if not is_id_c(selection_id):
+        print("Option 1")
+        not_type_c_question(question_list, question_not_c)
+        return
+
+    input ("Press enter to exit random test env.")
+
+    # print (selection_id)
+
     # Excepted Unique Selected Attributes:
     #               - CIDR
     #               - SubnetMask
@@ -37,5 +94,3 @@ def random_selection():
     #               - #OfSubnets
     #               - Hosts(Only ask for hosts if CIDR >= 24 )
 
-
-    input ("Press enter to exit random test env.")
