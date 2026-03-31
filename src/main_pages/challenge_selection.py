@@ -1,2 +1,2 @@
-def challengeSelection():
+def challenge_selection():
     input("inside challenge option")

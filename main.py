@@ -2,12 +2,13 @@
 # Date: 3-27-2026
 # Purpose: main function
 
-from src.mainPages.ipv4TableSelection import displayIPv4Table
-from src.mainPages.randomSelection import randomSelection
-from src.mainPages.challengeSelection import challengeSelection
-from src.mainPages.helpSelection import helpMenu
+from src.main_pages.ipv4_table_selection import display_ipv4_table
+from src.main_pages.random_selection import random_selection
+from src.main_pages.challenge_selection import challenge_selection
+from src.main_pages.help_selection import help_menu
 
-def mainMenu():
+
+def main_menu():
     global selection
     selection = input("\n\n\t\tWelcome to IPv4 Practice Application\n\nPlease choose from the following options:\n"
         "\t table       - View networking information table from /8 to /32\n"
@@ -23,16 +24,16 @@ def main():
     running = bool(True)
 
     while running:
-        mainMenu()
+        main_menu()
         match selection:
             case "table":
-                displayIPv4Table()
+                display_ipv4_table()
             case "random":
-                randomSelection()
+                random_selection()
             case "challenge":
-                challengeSelection()
+                challenge_selection()
             case "help":
-                helpMenu()
+                help_menu()
             case "exit":
                 if selection == "exit":
                     running = False

@@ -4,11 +4,11 @@
 
 import json
 import os
-from src.misc.CidrDataClass import CidrData
+from src.utils.cidr_data import CidrData
 
 
 # Get JSON data, convert to a list and close JSON 
-def formatJsonData():
+def format_json_data():
     # Path for json file location
     base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))     # base_dir = ../../../
     data_path = os.path.join(base_dir, "data", "data.json")                                     # data_path = base_dir/data/data.json
@@ -18,6 +18,6 @@ def formatJsonData():
         json_data = json.load(f)
     f.close()
     
-    cidrList = [CidrData(entry) for entry in json_data]
+    cidr_list = [CidrData(entry) for entry in json_data]
 
-    return cidrList
+    return cidr_list

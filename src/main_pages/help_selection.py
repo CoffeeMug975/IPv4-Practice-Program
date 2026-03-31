@@ -1,2 +1,2 @@
-def helpMenu():
+def help_menu():
     input("inside help option")
