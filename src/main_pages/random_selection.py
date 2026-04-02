@@ -21,19 +21,19 @@ def not_type_c_question(question_data_list: list, question_not_c: int) -> str:
     match question_not_c:
         case 1:
             print(f"For a CIDR of {question_data_list[0]} provide the following:\n")
-            entered_ipv4_class = input(f"IPv4 Class: ")
-            entered_subnet_mask = input(f"Subnet Mask: ")
-            entered_block_size = input(f"Block Size: ")
-            entered_num_of_subnets = input(f"Number of Subnets: ")
+            entered_ipv4_class = input(f"IPv4 Class\t\t: ")
+            entered_subnet_mask = input(f"Subnet Mask\t\t: ")
+            entered_block_size = input(f"Block Size\t\t: ")
+            entered_num_of_subnets = input(f"Number of Subnets\t: ")
 
             # Execute method to compare inputted data to answers
             check_answers()
         case 2:
             print(f"For a Subnet Mask of {question_data_list[1]} provide the following:\n")
-            entered_ipv4_class = input(f"IPv4 Class: ")
-            entered_cidr = input(f"CIDR: ")
-            entered_block_size = input(f"Block Size: ")
-            entered_num_of_subnets = input(f"Number of Subnets: ")
+            entered_ipv4_class = input(f"IPv4 Class\t\t: ")
+            entered_cidr = input(f"CIDR\t\t\t\t: ")
+            entered_block_size = input(f"Block Size\t\t: ")
+            entered_num_of_subnets = input(f"Number of Subnets\t: ")
 
             # Execute method to compare inputted data to answers
             check_answers()
@@ -48,32 +48,32 @@ def type_c_question(question_data_list: list, question_c: int) -> str:
     match question_c:
         case 1:
             print(f"For a CIDR of {question_data_list[0]} provide the following:\n")
-            entered_ipv4_class = input(f"IPv4 Class: ")
-            entered_subnet_mask = input(f"Subnet Mask: ")
-            entered_block_size = input(f"Block Size: ")
-            entered_num_of_subnets = input(f"Number of Subnets: ")
-            entered_num_of_hosts = input(f"Number of Hosts: ")
+            entered_ipv4_class = input(f"IPv4 Class\t\t: ")
+            entered_subnet_mask = input(f"Subnet Mask\t\t: ")
+            entered_block_size = input(f"Block Size\t\t: ")
+            entered_num_of_subnets = input(f"Number of Subnets\t: ")
+            entered_num_of_hosts = input(f"Number of Hosts\t: ")
 
             # Execute method to compare inputted data to answers
             check_answers()
         case 2:
             print(f"For a Subnet Mask of {question_data_list[1]} provide the following:\n")
-            entered_ipv4_class = input(f"IPv4 Class: ")
-            entered_cidr = input(f"CIDR: ")
-            entered_block_size = input(f"Block Size: ")
-            entered_num_of_subnets = input(f"Number of Subnets: ")
-            entered_num_of_hosts = input(f"Number of Hosts: ")
+            entered_ipv4_class = input(f"IPv4 Class\t\t: ")
+            entered_cidr = input(f"CIDR\t\t\t\t: ")
+            entered_block_size = input(f"Block Size\t\t: ")
+            entered_num_of_subnets = input(f"Number of Subnets\t: ")
+            entered_num_of_hosts = input(f"Number of Hosts\t: ")
 
             # Execute method to compare inputted data to answers
             check_answers()
         case 3:
             print(f"For a number of hosts of {question_data_list[2]} provide the following:\n")
-            entered_ipv4_class = input(f"IPv4 Class: ")
-            entered_cidr = input(f"CIDR: ")
-            entered_subnet_mask = input(f"Subnet Mask: ")
-            entered_block_size = input(f"Block Size: ")
-            entered_num_of_subnets = input(f"Number of Subnets: ")
-            entered_num_of_hosts = input(f"Number of Hosts: ")
+            entered_ipv4_class = input(f"IPv4 Class\t\t: ")
+            entered_cidr = input(f"CIDR\t\t\t\t: ")
+            entered_subnet_mask = input(f"Subnet Mask\t\t: ")
+            entered_block_size = input(f"Block Size\t\t: ")
+            entered_num_of_subnets = input(f"Number of Subnets\t: ")
+            entered_num_of_hosts = input(f"Number of Hosts\t: ")
 
             # Execute method to compare inputted data to answers
             check_answers()
