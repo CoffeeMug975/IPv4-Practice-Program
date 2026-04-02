@@ -18,7 +18,7 @@ def check_answers():
             # 4. yc_subnet  = This indicates it is a question that gives Subnet, is a class C, and asks for all other data 
             # 5. yc_hosts   = This indicates it is a question that gives hosts, is a class C, and asks for all other data
 
-        # question_data_list    This is the static answer data compared entered data is compared to
+        # entered_data_dict    This is the static answer data compared entered data is compared to
         # entered_data_list     This is the user data that was entered
     print("do it")
     return
@@ -102,6 +102,7 @@ def is_id_c(selection_id: int) -> bool:
 
 def random_selection():
     global entered_data_dict
+    global question_data_dict
     cidr_list = format_json_data()              # Generate list from JSON data 
     selection_id = int(random.randint(1,24))    # Random number from 1 to 24 referencing id of JSON data
     question_c = random.randint(1,3)            # Question can give user one of 3 variables (CIDR / SubnetMask / Hosts)
@@ -110,23 +111,30 @@ def random_selection():
     # Get question data for given selection id and store it in a list
     for cidr in cidr_list:
         if selection_id == cidr.getId():
-            global question_data_list
-            question_data_list = [cidr.getCidr()]                    # question_data_list[0] = CIDR
-            question_data_list.append(cidr.getIpClass())             # question_data_list[1] = IPv4 Class
-            question_data_list.append(cidr.getSubnetMask())          # question_data_list[2] = Subnet Mask
-            question_data_list.append(cidr.getBlockSize())           # question_data_list[3] = Block Size
-            question_data_list.append(cidr.getNumberOfSubnets())     # question_data_list[4] = Number of subnets
-            question_data_list.append(cidr.getHosts())               # question_data_list[5] = Number of Hosts
+            question_data_dict = {
+                "cidr": cidr.getCidr(),
+                "ipv4_class": cidr.getIpClass(),
+                "subnet_mask": cidr.getSubnetMask(),
+                "block_size": cidr.getBlockSize(),
+                "num_of_subnets": cidr.getNumberOfSubnets(),
+                "hosts": cidr.getHosts()
+            }
+            # question_data_list = [cidr.getCidr()]                    # question_data_list[0] = CIDR
+            # question_data_list.append(cidr.getIpClass())             # question_data_list[1] = IPv4 Class
+            # question_data_list.append(cidr.getSubnetMask())          # question_data_list[2] = Subnet Mask
+            # question_data_list.append(cidr.getBlockSize())           # question_data_list[3] = Block Size
+            # question_data_list.append(cidr.getNumberOfSubnets())     # question_data_list[4] = Number of subnets
+            # question_data_list.append(cidr.getHosts())               # question_data_list[5] = Number of Hosts
 
     # Empty dictionary for new question (for now)
     entered_data_dict = {}
 
     if is_id_c(selection_id):
-        type_c_question(question_data_list, question_c)
+        type_c_question(question_data_dict, question_c)
         return
     
     if not is_id_c(selection_id):
-        not_type_c_question(question_data_list, question_not_c)
+        not_type_c_question(question_data_dict, question_not_c)
         return
 
     input ("Press enter to exit random test env.")
