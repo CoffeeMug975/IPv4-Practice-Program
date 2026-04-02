@@ -52,8 +52,7 @@ def not_type_c_question(question_data_list: list, question_not_c: int) -> str:
 
 
 def type_c_question(question_data_list: list, question_c: int) -> str:
-    print(f"Question List: {question_data_list}")
-    print(f"Question Type: {question_c}")
+    # Match entered data to question
     match question_c:
         case 1:
             print(f"For a CIDR of {question_data_list[0]} provide the following:\n")
