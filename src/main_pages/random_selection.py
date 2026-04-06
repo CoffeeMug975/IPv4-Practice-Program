@@ -21,7 +21,9 @@ def check_answers(question_type: str, question_data_dict: dict, entered_data_dic
 
         # question_data_dict    This is the static answer data compared entered data is compared to
         # entered_data_dict     This is the user data that was entered
-    print("do it")
+    print(f"\n-----------\nQuestion Type: {question_type}\n")
+    print(f"Question Data Dict: {question_data_dict}\n")
+    print(f"Entered Data Dict: {entered_data_dict}\n-----------\n")
     return "string"
 
 def not_type_c_question(question_data_dict: dict, question_not_c: int):    
@@ -38,18 +40,18 @@ def not_type_c_question(question_data_dict: dict, question_not_c: int):
                 "num_of_subnets": input(f"Number of Subnets\t: ")
             }
             # Execute method to compare inputted data to answers
-            check_answers()
+            check_answers(question_type, question_data_dict, entered_data_dict)
         case 2:
             question_type = str("nc_subnet")
             print(f"For a Subnet Mask of {question_data_dict["subnet_mask"]} provide the following:\n")
             entered_data_dict = {
                 "ipv4_class": input(f"IPv4 Class\t\t: "),
-                "cidr": input(f"CIDR\t\t\t\t: "),
+                "cidr": input(f"CIDR\t\t\t: "),
                 "block_size": input(f"Block Size\t\t: "),
                 "num_of_subnets": input(f"Number of Subnets\t: ")
             }
             # Execute method to compare inputted data to answers
-            check_answers()
+            check_answers(question_type, question_data_dict, entered_data_dict)
         case __:
             print("Error: invalid question type of {question_not_c}")
     return
@@ -70,19 +72,19 @@ def type_c_question(question_data_dict: dict, question_c: int):
                 "num_of_hosts": input(f"Number of Hosts\t\t: ")
             }
             # Execute method to compare inputted data to answers
-            check_answers()
+            check_answers(question_type, question_data_dict, entered_data_dict)
         case 2:
             question_type = str("yc_subnet")
             print(f"For a Subnet Mask of {question_data_dict["subnet_mask"]} provide the following:\n")
             entered_data_dict = {
                 "ipv4_class": input(f"IPv4 Class\t\t: "),
-                "cidr": input(f"CIDR\t\t\t\t: "),
+                "cidr": input(f"CIDR\t\t\t: "),
                 "block_size": input(f"Block Size\t\t: "),
                 "num_of_subnets": input(f"Number of Subnets\t: "),
                 "num_of_hosts": input(f"Number of Hosts\t\t: ")
             }
             # Execute method to compare inputted data to answers
-            check_answers()
+            check_answers(question_type, question_data_dict, entered_data_dict)
         case 3:
             question_type = str("yc_hosts")
             print(f"For a number of hosts of {question_data_dict["hosts"]} provide the following:\n")
@@ -95,7 +97,7 @@ def type_c_question(question_data_dict: dict, question_c: int):
                 "num_of_hosts": input(f"Number of Hosts\t\t: ")
             }
             # Execute method to compare inputted data to answers
-            check_answers()
+            check_answers(question_type, question_data_dict, entered_data_dict)
         case __:
             print("Error: invalid question type of {question_not_c}")
 
@@ -112,32 +114,38 @@ def random_selection():
     global entered_data_dict
     global question_data_dict
 
-    # Empty dictionary for new question (for now)
-    entered_data_dict = {}
-    question_data_dict = {}
-    
-    cidr_list = format_json_data()              # Generate list from JSON data 
-    selection_id = int(random.randint(1,24))    # Random number from 1 to 24 referencing id of JSON data
-    question_c = random.randint(1,3)            # Question can give user one of 3 variables (CIDR / SubnetMask / Hosts)
-    question_not_c = random.randint(1,2)        # Question can give user one of 2 variables (CIDR / SubnetMask)
+    repeat_question = bool(True)
 
-    # Get question data for given selection id and store it in a list
-    for cidr in cidr_list:
-        if selection_id == cidr.getId():
-            question_data_dict = {
-                "cidr": cidr.getCidr(),
-                "ipv4_class": cidr.getIpClass(),
-                "subnet_mask": cidr.getSubnetMask(),
-                "block_size": cidr.getBlockSize(),
-                "num_of_subnets": cidr.getNumberOfSubnets(),
-                "hosts": cidr.getHosts()
-            }
+    while repeat_question:
+        # Empty dictionary for new question (for now)
+        entered_data_dict = {}
+        question_data_dict = {}
+        
+        cidr_list = format_json_data()              # Generate list from JSON data 
+        selection_id = int(random.randint(1,24))    # Random number from 1 to 24 referencing id of JSON data
+        question_c = random.randint(1,3)            # Question can give user one of 3 variables (CIDR / SubnetMask / Hosts)
+        question_not_c = random.randint(1,2)        # Question can give user one of 2 variables (CIDR / SubnetMask)
+
+        # Get question data for given selection id and store it in a list
+        for cidr in cidr_list:
+            if selection_id == cidr.getId():
+                question_data_dict = {
+                    "cidr": cidr.getCidr(),
+                    "ipv4_class": cidr.getIpClass(),
+                    "subnet_mask": cidr.getSubnetMask(),
+                    "block_size": cidr.getBlockSize(),
+                    "num_of_subnets": cidr.getNumberOfSubnets(),
+                    "hosts": cidr.getHosts()
+                }
 
 
-    if is_id_c(selection_id):
-        type_c_question(question_data_dict, question_c)
-    
-    if not is_id_c(selection_id):
-        not_type_c_question(question_data_dict, question_not_c)
+        if is_id_c(selection_id):
+            type_c_question(question_data_dict, question_c)
+        
+        if not is_id_c(selection_id):
+            not_type_c_question(question_data_dict, question_not_c)
 
-    input ("Press enter to exit random test env.")
+        # repeat_question_decision = input (f"Enter \"new\"for an new question or \"back\" to go back to main menu\n: ")
+        repeat_question_decision = input (f"-------------------------\nPress enter for new question OR enter \"back\" to go to main menu\n: ")
+        if repeat_question_decision == "back":
+            repeat_question = False
