@@ -11,8 +11,8 @@ def check_answers(question_type: str, question_data_dict: dict, entered_data_dic
     # check_answer() takes 3 arguments
         # question_type         This determines the answer response
             # (nc_cidr / nc_subnet / yc_cidr / yc_subnet / yc_hosts)
-        # question_data_dict    This is the static answer data compared entered data is compared to
-        # entered_data_dict     This is the user data that was entered
+        # question_data_dict    This is the static answer data
+        # entered_data_dict     This is the entered user data
     print(f"\n-----------\nQuestion Type: {question_type}\n")
     print(f"Question Data Dict: {question_data_dict}\n")
     print(f"Entered Data Dict: {entered_data_dict}\n-----------\n")
