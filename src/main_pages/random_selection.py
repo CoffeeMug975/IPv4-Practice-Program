@@ -5,19 +5,12 @@
 import random
 from src.utils.data_formatter import format_json_data
 
-# Is this much case match good? Look into a better way
 
 # Turn this into a callable .py file
 def check_answers(question_type: str, question_data_dict: dict, entered_data_dict: dict):
     # check_answer() takes 3 arguments
         # question_type         This determines the answer response
             # (nc_cidr / nc_subnet / yc_cidr / yc_subnet / yc_hosts)
-            # 1. nc_cidr    = Question that gives CIDR, is class A/B, and asks for all data except hosts 
-            # 2. nc_subnet  = Question that gives Subnet, is class A/B, and asks for all data except hosts
-            # 3. yc_cidr    = Question that gives CIDR, is a class C, and asks for all other data
-            # 4. yc_subnet  = Question that gives Subnet, is a class C, and asks for all other data
-            # 5. yc_hosts   = Question that gives hosts, is a class C, and asks for all other data
-
         # question_data_dict    This is the static answer data compared entered data is compared to
         # entered_data_dict     This is the user data that was entered
     print(f"\n-----------\nQuestion Type: {question_type}\n")
@@ -43,7 +36,6 @@ def check_answers(question_type: str, question_data_dict: dict, entered_data_dic
             f"Block Size\t\t: {question_data_dict['block_size']}\t\t\t: {entered_data_dict['block_size']}\n"
             f"Number of Subnets\t: {question_data_dict['num_of_subnets']}\t\t\t: {entered_data_dict['num_of_subnets']}\n"
             "")
-            
 
             # Check for errors & print if any
             errors = []
@@ -145,7 +137,7 @@ def type_c_question(question_data_dict: dict, question_c: int):
             # Execute method to compare inputted data to answers
             check_answers(question_type, question_data_dict, entered_data_dict)
         case __:
-            print("Error: invalid question type of {question_not_c}")
+            print("Error: invalid question type of {question_c}")
     return
 
 
@@ -159,12 +151,12 @@ def is_id_c(id_value: int) -> bool:
 def random_selection():
     global entered_data_dict
     global question_data_dict
-    cidr_list = format_json_data()              # Generate list from JSON data 
+    cidr_list = format_json_data()                  # Generate list from JSON data 
 
     repeat_question = bool(True)
 
     while repeat_question:
-        # Empty dictionary for new question (for now)
+        # Empty dictionary for new question
         entered_data_dict = {}
         question_data_dict = {}
         
@@ -192,7 +184,6 @@ def random_selection():
         if not is_id_c(id_value):
             not_type_c_question(question_data_dict, question_not_c)
 
-        # repeat_question_decision = input (f"Enter \"new\"for an new question or \"back\" to go back to main menu\n: ")
         repeat_question_decision = input (f"-------------------------\nPress enter for new question OR enter \"back\" to go to main menu\n: ")
         if repeat_question_decision == "back":
             repeat_question = False
