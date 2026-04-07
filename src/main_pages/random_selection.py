@@ -1,30 +1,74 @@
 # Author: Daniel Asefa
 # Purpose: 3/30/2026
 
+# reference to "c" is about if the given question is in IPv4 Class C or not
 import random
 from src.utils.data_formatter import format_json_data
 
-# 5 varieties of CheckAnswer() is not a good thing. Has to be a better way. Look into later
-# Create one universal CheckAnswer()
 # Is this much case match good? Look into a better way
-# Have this page loop until user enters "back"
 
-def check_answers(question_type: str, question_data_dict: dict, entered_data_dict: dict) -> str:
+def check_answers(question_type: str, question_data_dict: dict, entered_data_dict: dict):
     # check_answer() takes 3 arguments
         # question_type         This determines the answer response
-            #    Can make this a string + ensure that string is validated for security (is this needed?)
-            # 1. nc_cidr    = This indicates it is a question that gives CIDR, is a class A/B, and asks for all data except hosts   Done 
-            # 2. nc_subnet  = This indicates it is a question that gives Subnet, is a class A/B, and asks for all data except hosts Done
-            # 3. yc_cidr    = This indicates it is a question that gives CIDR, is a class C, and asks for all other data            Done
-            # 4. yc_subnet  = This indicates it is a question that gives Subnet, is a class C, and asks for all other data          d
-            # 5. yc_hosts   = This indicates it is a question that gives hosts, is a class C, and asks for all other data           d
+            # (nc_cidr / nc_subnet / yc_cidr / yc_subnet / yc_hosts)
+            # 1. nc_cidr    = Question that gives CIDR, is class A/B, and asks for all data except hosts 
+            # 2. nc_subnet  = Question that gives Subnet, is class A/B, and asks for all data except hosts
+            # 3. yc_cidr    = Question that gives CIDR, is a class C, and asks for all other data
+            # 4. yc_subnet  = Question that gives Subnet, is a class C, and asks for all other data
+            # 5. yc_hosts   = Question that gives hosts, is a class C, and asks for all other data
 
         # question_data_dict    This is the static answer data compared entered data is compared to
         # entered_data_dict     This is the user data that was entered
     print(f"\n-----------\nQuestion Type: {question_type}\n")
     print(f"Question Data Dict: {question_data_dict}\n")
     print(f"Entered Data Dict: {entered_data_dict}\n-----------\n")
-    return "string"
+
+    # I guess more case matches for each question type? Or is there a better way to do this?
+    match question_type:
+        case "nc_cidr":
+
+            # Set up fields for this question type
+            fields = {
+                "IPv4 Class": "ipv4_class",
+                "Subnet Mask": "subnet_mask",
+                "Block Size": "block_size",
+                "Number of Subnets": "num_of_subnets"
+            }
+
+            # Display actual vs entered for user to compare
+            print(f"\t\t\tActual Values\t\tEntered Values\n"
+            f"IPv4 Class\t\t: {question_data_dict['ipv4_class']}\t\t\t: {entered_data_dict['ipv4_class']}\n"
+            f"Subnet Mask\t\t: {question_data_dict['subnet_mask']}\t\t: {entered_data_dict['subnet_mask']}\n"
+            f"Block Size\t\t: {question_data_dict['block_size']}\t\t\t: {entered_data_dict['block_size']}\n"
+            f"Number of Subnets\t: {question_data_dict['num_of_subnets']}\t\t\t: {entered_data_dict['num_of_subnets']}\n"
+            "")
+            
+
+            # Check for errors & print if any
+            errors = []
+
+            for label, key in fields.items():
+                if question_data_dict[key] != entered_data_dict[key]:
+                    errors.append(label)
+
+            if errors:
+                print(f"Errors: " + ", ".join(errors))
+            else:
+                print("All correct, great job!!")
+
+        case "nc_subnet":
+            return("This is a nc_subnet question")
+            # Compare entered data to question data and print results
+
+        case "yc_cidr":
+            print("This is a yc_cidr question")
+            
+            
+        case "yc_subnet":
+            print("This is a yc_subnet question")
+        case "yc_hosts":
+            print("This is a yc_hosts question")
+    return "End string"
 
 def not_type_c_question(question_data_dict: dict, question_not_c: int):    
     # Match entered data to question
