@@ -50,17 +50,132 @@ def check_answers(question_type: str, question_data_dict: dict, entered_data_dic
                 print("All correct, great job!!")
 
         case "nc_subnet":
-            return("This is a nc_subnet question")
-            # Compare entered data to question data and print results
+
+            # Set up fields for question type
+            fields = {
+                "IPv4 Class": "ipv4_class",
+                "CIDR": "cidr",
+                "Block Size": "block_size",
+                "Number of Subnets": "num_of_subnets"
+            }
+
+            # Display actual vs entered for user to compare
+            print(f"\t\t\tActual Values\t\tEntered Values\n"
+            f"IPv4 Class\t\t: {question_data_dict['ipv4_class']}\t\t\t: {entered_data_dict['ipv4_class']}\n"
+            f"CIDR\t\t\t: {question_data_dict['cidr']}\t\t\t: {entered_data_dict['cidr']}\n"
+            f"Block Size\t\t: {question_data_dict['block_size']}\t\t\t: {entered_data_dict['block_size']}\n"
+            f"Number of Subnets\t: {question_data_dict['num_of_subnets']}\t\t\t: {entered_data_dict['num_of_subnets']}\n"
+            "")
+
+            # Check for errors & print if any
+            errors = []
+
+            for label, key in fields.items():
+                if question_data_dict[key] != entered_data_dict[key]:
+                    errors.append(label)
+
+            if errors:
+                print(f"Errors: " + ", ".join(errors))
+            else:
+                print("All correct, great job!!")
 
         case "yc_cidr":
-            print("This is a yc_cidr question")
-            
-            
+
+            # Set up fields for question type
+            fields = {
+                "IPv4 Class": "ipv4_class",
+                "Subnet Mask": "subnet_mask",
+                "Block Size": "block_size",
+                "Number of Subnets": "num_of_subnets",
+                "Number of Hosts": "num_of_hosts"
+            }
+
+            # Display actual vs entered for user to compare
+            print(f"\t\t\tActual Values\t\tEntered Values\n"
+            f"IPv4 Class\t\t: {question_data_dict['ipv4_class']}\t\t\t: {entered_data_dict['ipv4_class']}\n"
+            f"Subnet Mask\t\t: {question_data_dict['subnet_mask']}\t: {entered_data_dict['subnet_mask']}\n"
+            f"Block Size\t\t: {question_data_dict['block_size']}\t\t\t: {entered_data_dict['block_size']}\n"
+            f"Number of Subnets\t: {question_data_dict['num_of_subnets']}\t\t\t: {entered_data_dict['num_of_subnets']}\n"
+            f"Number of Hosts\t\t: {question_data_dict['num_of_hosts']}\t\t\t: {entered_data_dict['num_of_hosts']}\n"
+            "")
+
+            # Check for errors & print if any
+            errors = []
+
+            for label, key in fields.items():
+                if question_data_dict[key] != entered_data_dict[key]:
+                    errors.append(label)
+
+            if errors:
+                print(f"Errors: " + ", ".join(errors))
+            else:
+                print("All correct, great job!!")
+                        
         case "yc_subnet":
-            print("This is a yc_subnet question")
+
+            # Set up fields for question type
+            fields = {
+                "IPv4 Class": "ipv4_class",
+                "CIDR": "cidr",
+                "Block Size": "block_size",
+                "Number of Subnets": "num_of_subnets",
+                "Number of Hosts": "num_of_hosts"
+            }
+
+            # Display actual vs entered for user to compare
+            print(f"\t\t\tActual Values\t\tEntered Values\n"
+            f"IPv4 Class\t\t: {question_data_dict['ipv4_class']}\t\t\t: {entered_data_dict['ipv4_class']}\n"
+            f"CIDR\t\t\t: {question_data_dict['cidr']}\t\t\t: {entered_data_dict['cidr']}\n"
+            f"Block Size\t\t: {question_data_dict['block_size']}\t\t\t: {entered_data_dict['block_size']}\n"
+            f"Number of Subnets\t: {question_data_dict['num_of_subnets']}\t\t\t: {entered_data_dict['num_of_subnets']}\n"
+            f"Number of Hosts\t\t: {question_data_dict['num_of_hosts']}\t\t\t: {entered_data_dict['num_of_hosts']}\n"
+            "")
+
+            # Check for errors & print if any
+            errors = []
+
+            for label, key in fields.items():
+                if question_data_dict[key] != entered_data_dict[key]:
+                    errors.append(label)
+
+            if errors:
+                print(f"Errors: " + ", ".join(errors))
+            else:
+                print("All correct, great job!!")
+
         case "yc_hosts":
-            print("This is a yc_hosts question")
+
+            # Set up fields for question type
+            fields = {
+                "IPv4 Class": "ipv4_class",
+                "CIDR": "cidr",
+                "Subnet Mask": "subnet_mask",
+                "Block Size": "block_size",
+                "Number of Subnets": "num_of_subnets",
+                "Number of Hosts": "num_of_hosts"
+            }
+
+            # Display actual vs entered for user to compare
+            print(f"\t\t\tActual Values\t\tEntered Values\n"
+            f"IPv4 Class\t\t: {question_data_dict['ipv4_class']}\t\t\t: {entered_data_dict['ipv4_class']}\n"
+            f"CIDR\t\t\t: {question_data_dict['cidr']}\t\t\t: {entered_data_dict['cidr']}\n"
+            f"Subnet Mask\t\t: {question_data_dict['subnet_mask']}\t: {entered_data_dict['subnet_mask']}\n"            
+            f"Block Size\t\t: {question_data_dict['block_size']}\t\t\t: {entered_data_dict['block_size']}\n"
+            f"Number of Subnets\t: {question_data_dict['num_of_subnets']}\t\t\t: {entered_data_dict['num_of_subnets']}\n"
+            f"Number of Hosts\t\t: {question_data_dict['num_of_hosts']}\t\t\t: {entered_data_dict['num_of_hosts']}\n"
+            "")
+
+            # Check for errors & print if any
+            errors = []
+
+            for label, key in fields.items():
+                if question_data_dict[key] != entered_data_dict[key]:
+                    errors.append(label)
+
+            if errors:
+                print(f"Errors: " + ", ".join(errors))
+            else:
+                print("All correct, great job!!")
     return "End string"
 
 # Turn this into a callable .py file
@@ -125,10 +240,10 @@ def type_c_question(question_data_dict: dict, question_c: int):
             check_answers(question_type, question_data_dict, entered_data_dict)
         case 3:
             question_type = str("yc_hosts")
-            print(f"For a number of hosts of {question_data_dict["hosts"]} provide the following:\n")
+            print(f"For a number of hosts of {question_data_dict["num_of_hosts"]} provide the following:\n")
             entered_data_dict = {
                 "ipv4_class": input(f"IPv4 Class\t\t: "),
-                "cidr": input(f"CIDR\t\t\t\t: "),
+                "cidr": input(f"CIDR\t\t\t: "),
                 "subnet_mask": input(f"Subnet Mask\t\t: "),
                 "block_size": input(f"Block Size\t\t: "),
                 "num_of_subnets": input(f"Number of Subnets\t: "),
@@ -168,16 +283,16 @@ def random_selection():
         for cidr in cidr_list:
             if selection_id == cidr.getId():
                 question_data_dict = {
-                    "cidr": cidr.getCidr(),
+                    "cidr": str(cidr.getCidr()),
                     "ipv4_class": cidr.getIpClass(),
-                    "subnet_mask": cidr.getSubnetMask(),
-                    "block_size": cidr.getBlockSize(),
-                    "num_of_subnets": cidr.getNumberOfSubnets(),
-                    "hosts": cidr.getHosts()
+                    "subnet_mask": str(cidr.getSubnetMask()),
+                    "block_size": str(cidr.getBlockSize()),
+                    "num_of_subnets": str(cidr.getNumberOfSubnets()),
+                    "num_of_hosts": str(cidr.getHosts())
                 }
 
 
-        id_value = question_data_dict['cidr']
+        id_value = int(question_data_dict['cidr'])
         if is_id_c(id_value):
             type_c_question(question_data_dict, question_c)
         
