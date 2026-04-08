@@ -283,16 +283,16 @@ def random_selection():
         for cidr in cidr_list:
             if selection_id == cidr.getId():
                 question_data_dict = {
-                    "cidr": cidr.getCidr(),
+                    "cidr": str(cidr.getCidr()),
                     "ipv4_class": cidr.getIpClass(),
-                    "subnet_mask": cidr.getSubnetMask(),
-                    "block_size": cidr.getBlockSize(),
-                    "num_of_subnets": cidr.getNumberOfSubnets(),
-                    "num_of_hosts": cidr.getHosts()
+                    "subnet_mask": str(cidr.getSubnetMask()),
+                    "block_size": str(cidr.getBlockSize()),
+                    "num_of_subnets": str(cidr.getNumberOfSubnets()),
+                    "num_of_hosts": str(cidr.getHosts())
                 }
 
 
-        id_value = question_data_dict['cidr']
+        id_value = int(question_data_dict['cidr'])
         if is_id_c(id_value):
             type_c_question(question_data_dict, question_c)
         
