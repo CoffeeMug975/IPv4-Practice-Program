@@ -62,7 +62,7 @@ def check_answers(question_type: str, question_data_dict: dict, entered_data_dic
             # Display actual vs entered for user to compare
             print(f"\t\t\tActual Values\t\tEntered Values\n"
             f"IPv4 Class\t\t: {question_data_dict['ipv4_class']}\t\t\t: {entered_data_dict['ipv4_class']}\n"
-            f"CIDR\t\t\t: {question_data_dict['cidr']}\t\t: {entered_data_dict['cidr']}\n"
+            f"CIDR\t\t\t: {question_data_dict['cidr']}\t\t\t: {entered_data_dict['cidr']}\n"
             f"Block Size\t\t: {question_data_dict['block_size']}\t\t\t: {entered_data_dict['block_size']}\n"
             f"Number of Subnets\t: {question_data_dict['num_of_subnets']}\t\t\t: {entered_data_dict['num_of_subnets']}\n"
             "")
@@ -86,15 +86,17 @@ def check_answers(question_type: str, question_data_dict: dict, entered_data_dic
                 "IPv4 Class": "ipv4_class",
                 "Subnet Mask": "subnet_mask",
                 "Block Size": "block_size",
-                "Number of Subnets": "num_of_subnets"
+                "Number of Subnets": "num_of_subnets",
+                "Number of Hosts": "num_of_hosts"
             }
 
             # Display actual vs entered for user to compare
             print(f"\t\t\tActual Values\t\tEntered Values\n"
             f"IPv4 Class\t\t: {question_data_dict['ipv4_class']}\t\t\t: {entered_data_dict['ipv4_class']}\n"
-            f"Subnet Mask\t\t: {question_data_dict['subnet_mask']}\t\t: {entered_data_dict['subnet_mask']}\n"
+            f"Subnet Mask\t\t: {question_data_dict['subnet_mask']}\t: {entered_data_dict['subnet_mask']}\n"
             f"Block Size\t\t: {question_data_dict['block_size']}\t\t\t: {entered_data_dict['block_size']}\n"
             f"Number of Subnets\t: {question_data_dict['num_of_subnets']}\t\t\t: {entered_data_dict['num_of_subnets']}\n"
+            f"Number of Hosts\t\t: {question_data_dict['num_of_hosts']}\t\t\t: {entered_data_dict['num_of_hosts']}\n"
             "")
 
             # Check for errors & print if any
@@ -123,10 +125,10 @@ def check_answers(question_type: str, question_data_dict: dict, entered_data_dic
             # Display actual vs entered for user to compare
             print(f"\t\t\tActual Values\t\tEntered Values\n"
             f"IPv4 Class\t\t: {question_data_dict['ipv4_class']}\t\t\t: {entered_data_dict['ipv4_class']}\n"
-            f"CIDR\t\t\t: {question_data_dict['cidr']}\t\t: {entered_data_dict['cidr']}\n"
+            f"CIDR\t\t\t: {question_data_dict['cidr']}\t\t\t: {entered_data_dict['cidr']}\n"
             f"Block Size\t\t: {question_data_dict['block_size']}\t\t\t: {entered_data_dict['block_size']}\n"
             f"Number of Subnets\t: {question_data_dict['num_of_subnets']}\t\t\t: {entered_data_dict['num_of_subnets']}\n"
-            f"Number of Hosts\t: {question_data_dict['num_of_hosts']}\t\t\t: {entered_data_dict['num_of_hosts']}\n"
+            f"Number of Hosts\t\t: {question_data_dict['num_of_hosts']}\t\t\t: {entered_data_dict['num_of_hosts']}\n"
             "")
 
             # Check for errors & print if any
@@ -156,11 +158,11 @@ def check_answers(question_type: str, question_data_dict: dict, entered_data_dic
             # Display actual vs entered for user to compare
             print(f"\t\t\tActual Values\t\tEntered Values\n"
             f"IPv4 Class\t\t: {question_data_dict['ipv4_class']}\t\t\t: {entered_data_dict['ipv4_class']}\n"
-            f"CIDR\t\t\t: {question_data_dict['subnet_mask']}\t\t: {entered_data_dict['subnet_mask']}\n"
-            f"Subnet Mask\t\t: {question_data_dict['subnet_mask']}\t\t: {entered_data_dict['subnet_mask']}\n"            
+            f"CIDR\t\t\t: {question_data_dict['cidr']}\t\t\t: {entered_data_dict['cidr']}\n"
+            f"Subnet Mask\t\t: {question_data_dict['subnet_mask']}\t: {entered_data_dict['subnet_mask']}\n"            
             f"Block Size\t\t: {question_data_dict['block_size']}\t\t\t: {entered_data_dict['block_size']}\n"
             f"Number of Subnets\t: {question_data_dict['num_of_subnets']}\t\t\t: {entered_data_dict['num_of_subnets']}\n"
-            f"Number of Hosts\t: {question_data_dict['num_of_hosts']}\t\t\t: {entered_data_dict['num_of_hosts']}\n"
+            f"Number of Hosts\t\t: {question_data_dict['num_of_hosts']}\t\t\t: {entered_data_dict['num_of_hosts']}\n"
             "")
 
             # Check for errors & print if any
